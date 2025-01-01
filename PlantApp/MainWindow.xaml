@@ -12,6 +12,9 @@
             <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnNotifications" Click="btnNotifications_Click">
                 <TextBlock Text="Notifications" HorizontalAlignment="Center"  />
             </Button>
+            <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnPlantSpecies" Click="btnPlantSpecies_Click">
+                <TextBlock Text="Plant species" HorizontalAlignment="Center"  />
+            </Button>
         </StackPanel>
         <ContentControl x:Name="contentControl"/>
     </DockPanel>

@@ -18,5 +18,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new NotificationsUC();
 		}
+
+		private void btnPlantSpecies_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new PlantSpeciesUC();
+		}
 	}
 }

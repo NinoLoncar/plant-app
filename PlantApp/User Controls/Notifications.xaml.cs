@@ -3,9 +3,6 @@ using System.Windows.Controls;
 
 namespace PlantApp.User_Controls
 {
-	/// <summary>
-	/// Interaction logic for NotifictaionsUC.xaml
-	/// </summary>
 	public partial class NotificationsUC : UserControl
 	{
 		DatabaseHelper db;

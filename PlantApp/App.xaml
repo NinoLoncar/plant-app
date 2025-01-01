@@ -74,6 +74,7 @@
             <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
             <Setter Property="CanUserResizeColumns" Value="True"/>
             <Setter Property="CanUserResizeRows" Value="True"/>
+            <Setter Property="ColumnWidth" Value="*"/>
         </Style>
 
 
