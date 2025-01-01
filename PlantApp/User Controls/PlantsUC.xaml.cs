@@ -1,12 +1,10 @@
 ﻿using PlantApp.Models;
 using System.Windows;
-using System.Windows.Controls;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace PlantApp.User_Controls
 {
-	/// <summary>
-	/// Interaction logic for PlantsUC.xaml
-	/// </summary>
+
 	public partial class PlantsUC : UserControl
 	{
 		DatabaseHelper db;

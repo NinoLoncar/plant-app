@@ -1,13 +1,12 @@
 ﻿using Npgsql;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
+using Brushes = System.Windows.Media.Brushes;
+using UserControl = System.Windows.Controls.UserControl;
+
 
 namespace PlantApp
 {
-	/// <summary>
-	/// Interaction logic for RegistrationUC.xaml
-	/// </summary>
+
 	public partial class RegistrationUC : UserControl
 	{
 		DatabaseHelper db;
