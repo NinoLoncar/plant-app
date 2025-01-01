@@ -35,6 +35,7 @@ namespace PlantApp
 
 				if (users.Count == 1)
 				{
+					Authenticator.LoggedInUser = users[0];
 					MainWindow mainWindow = new MainWindow();
 					mainWindow.Show();
 					Window parentWindow = Window.GetWindow(this);
@@ -46,7 +47,7 @@ namespace PlantApp
 				else
 				{
 					lblLogin.Content = "Wrong credentials";
-					lblLogin.Visibility = System.Windows.Visibility.Visible;
+					lblLogin.Visibility = Visibility.Visible;
 				}
 			}
 			catch (Exception ex)
