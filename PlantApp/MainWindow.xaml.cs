@@ -33,5 +33,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new WateringReportUC();
 		}
+
+		private void btnDiaryEntries_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new DiaryEntriesUC();
+		}
 	}
 }
