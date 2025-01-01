@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800"
         WindowState="Maximized">
     <DockPanel Background="AliceBlue">
-        <StackPanel DockPanel.Dock="Top" Background="SkyBlue" Height="50" Orientation="Horizontal">
+        <StackPanel DockPanel.Dock="Top" Background="MediumSpringGreen" Height="50" Orientation="Horizontal">
             <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnNotifications" Click="btnNotifications_Click">
                 <TextBlock Text="Notifications" HorizontalAlignment="Center"  />
             </Button>

@@ -29,8 +29,51 @@
             <Setter Property="Padding" Value="10 0 10 0"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Background" Value="AliceBlue"/>
+            <Setter Property="Background" Value="MediumSpringGreen"/>
             <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+
+
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+
+            <Setter Property="BorderBrush" Value="Black"/>
+            
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+
+            <Setter Property="RowHeight" Value="30"/>
+            <Setter Property="AlternatingRowBackground" Value="AliceBlue"/>
+
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="ColumnHeaderHeight" Value="35"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="MediumSpringGreen"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="CanUserResizeRows" Value="True"/>
         </Style>
 
 

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using PlantApp.User_Controls;
+using System.Windows;
 
 namespace PlantApp
 {
@@ -10,11 +11,12 @@ namespace PlantApp
 		public MainWindow()
 		{
 			InitializeComponent();
+			contentControl.Content = new NotificationsUC();
 		}
 
 		private void btnNotifications_Click(object sender, RoutedEventArgs e)
 		{
-
+			contentControl.Content = new NotificationsUC();
 		}
 	}
 }
