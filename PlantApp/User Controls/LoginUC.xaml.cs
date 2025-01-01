@@ -1,4 +1,5 @@
 ﻿using PlantApp.Models;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace PlantApp
@@ -34,8 +35,13 @@ namespace PlantApp
 
 				if (users.Count == 1)
 				{
-					lblLogin.Content = "Uspješna prijava";
-					lblLogin.Visibility = System.Windows.Visibility.Visible;
+					MainWindow mainWindow = new MainWindow();
+					mainWindow.Show();
+					Window parentWindow = Window.GetWindow(this);
+					if (parentWindow != null)
+					{
+						parentWindow.Close();
+					}
 				}
 				else
 				{
