@@ -28,5 +28,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new PlantsUC();
 		}
+
+		private void btnWateringReports_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new WateringReportUC();
+		}
 	}
 }
