@@ -44,6 +44,7 @@ namespace PlantApp.User_Controls
 				{
 					lblMessage.Visibility = Visibility.Hidden;
 					LoadData();
+					RefreshForm();
 				}
 				else
 				{
@@ -57,6 +58,11 @@ namespace PlantApp.User_Controls
 				lblMessage.Visibility = Visibility.Visible;
 			}
 
+		}
+		private void RefreshForm()
+		{
+			txtName.Text = "";
+			decRequiredWater.Value = (decimal?)0.1;
 		}
 
 		private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -78,6 +84,7 @@ namespace PlantApp.User_Controls
 			}
 
 		}
+
 	}
 }
 
