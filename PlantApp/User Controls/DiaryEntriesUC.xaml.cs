@@ -1,11 +1,11 @@
 ﻿using PlantApp.Models;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+using UserControl = System.Windows.Controls.UserControl;
 namespace PlantApp.User_Controls
 {
-	/// <summary>
-	/// Interaction logic for DiaryEntriesUC.xaml
-	/// </summary>
 	public partial class DiaryEntriesUC : UserControl
 	{
 		DatabaseHelper db;
@@ -93,6 +93,93 @@ namespace PlantApp.User_Controls
 			cbxPlants.SelectedIndex = 0;
 			txtTitle.Text = "";
 			txtContent.Text = "";
+		}
+
+		private void btnAddImage_Click(object sender, RoutedEventArgs e)
+		{
+			var selectedDiaryEntry = dtgDiaryEntries.SelectedItem as DiaryEntry;
+			if (selectedDiaryEntry == null)
+			{
+				lblMessage.Content = "Select diary entry";
+				lblMessage.Visibility = Visibility.Visible;
+				return;
+			}
+			string? imagePath = OpenImageFileExplorer();
+			if (!string.IsNullOrEmpty(imagePath))
+			{
+				try
+				{
+					string imageExtension = Path.GetExtension(imagePath)?.TrimStart('.').ToLower();
+					lblMessage.Visibility = Visibility.Collapsed;
+					var sql = "INSERT INTO images VALUES(DEFAULT, @DiaryEntry, DEFAULT, lo_import(@ImagePath), @Type);";
+					var result = db.ExecuteNonQuery(sql, new { DiaryEntry = selectedDiaryEntry.Id, ImagePath = imagePath, Type = imageExtension });
+					if (result != 1)
+					{
+						lblMessage.Content = "Something went wrong";
+						lblMessage.Visibility = Visibility.Visible;
+					}
+				}
+				catch (Exception ex)
+				{
+					{
+						lblMessage.Content = "Something went wrong";
+						lblMessage.Visibility = Visibility.Visible;
+					}
+				}
+
+			}
+		}
+		private string? OpenImageFileExplorer()
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+
+			if (openFileDialog.ShowDialog() == true)
+			{
+				return openFileDialog.FileName;
+			}
+
+			return null;
+		}
+
+		private void btnExportImages_Click(object sender, RoutedEventArgs e)
+		{
+			var selectedDiaryEntry = dtgDiaryEntries.SelectedItem as DiaryEntry;
+			if (selectedDiaryEntry == null)
+			{
+				lblMessage.Content = "Select diary entry";
+				lblMessage.Visibility = Visibility.Visible;
+				return;
+			}
+			string folderPath = OpenFolderExplorer();
+			if (!string.IsNullOrEmpty(folderPath))
+			{
+				try
+				{
+					var sql = "SELECT export_images_for_diary_entry(@DiaryEntry, @FolderPath);";
+					db.ExecuteNonQuery(sql, new { DiaryEntry = selectedDiaryEntry.Id, FolderPath = folderPath });
+					Process.Start("explorer.exe", folderPath);
+
+				}
+				catch (Exception ex)
+				{
+					lblMessage.Content = "Something went wrong";
+					lblMessage.Visibility = Visibility.Visible;
+				}
+			}
+		}
+
+		private string? OpenFolderExplorer()
+		{
+
+			var folderDialog = new FolderBrowserDialog();
+
+			if (folderDialog.ShowDialog() == DialogResult.OK)
+			{
+				return folderDialog.SelectedPath;
+			}
+
+			return null;
 		}
 	}
 }
