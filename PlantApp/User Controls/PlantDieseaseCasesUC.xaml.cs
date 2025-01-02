@@ -98,7 +98,7 @@ namespace PlantApp.User_Controls
 				switch (ex.SqlState)
 				{
 					case "23505":
-						lblMessage.Content = "Member already exists";
+						lblMessage.Content = "Case already exists";
 						lblMessage.Visibility = System.Windows.Visibility.Visible;
 						break;
 					default:
