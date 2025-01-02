@@ -30,6 +30,9 @@
             <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnGroups" Click="btnGroups_Click">
                 <TextBlock Text="Plant groups" HorizontalAlignment="Center" />
             </Button>
+            <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnGroupMembers" Click="btnGroupMembers_Click">
+                <TextBlock Text="Group members" HorizontalAlignment="Center" />
+            </Button>
         </StackPanel>
         <ContentControl x:Name="contentControl"/>
     </DockPanel>

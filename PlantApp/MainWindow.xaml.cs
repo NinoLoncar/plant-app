@@ -45,5 +45,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new GroupsUC();
 		}
+
+		private void btnGroupMembers_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new PlantGroupMembersUC();
+		}
 	}
 }
