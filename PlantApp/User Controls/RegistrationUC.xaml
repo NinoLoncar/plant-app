@@ -20,19 +20,19 @@
             <Label Margin="0 0 20 0" Width="100" Style="{StaticResource LabelStyle}">
                 Email:
             </Label>
-            <TextBox x:Name="txtEmail" Width="200" Style="{StaticResource TextBoxStyle}"/>
+            <TextBox MaxLength="255" x:Name="txtEmail" Width="200" Style="{StaticResource TextBoxStyle}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label  Width="100" Margin="0 0 20 0" Style="{StaticResource LabelStyle}">
                 Username:
             </Label>
-            <TextBox x:Name="txtUsername" Width="200" Style="{StaticResource TextBoxStyle}"/>
+            <TextBox MaxLength="30"  x:Name="txtUsername" Width="200" Style="{StaticResource TextBoxStyle}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Label  Width="100" Margin="0 0 20 0" Style="{StaticResource LabelStyle}">
                 Password:
             </Label>
-            <PasswordBox x:Name="txtPassword" Width="200" />
+            <PasswordBox MaxLength="500" x:Name="txtPassword" Width="200" />
         </StackPanel>
         <Button Grid.Row="4" x:Name="btnRegister" Click="btnRegister_Click" Content="Register" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
         <Label  x:Name="lblLogin" Foreground="Red" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Hidden" Style="{StaticResource LabelStyle}">

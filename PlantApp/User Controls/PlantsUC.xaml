@@ -32,7 +32,7 @@
                 <Label Margin="0 0 20 0" Style="{StaticResource LabelStyle}">
                     Species
                 </Label>
-                <ComboBox x:Name="cbxSpecies"  FontSize="16"  FontFamily="Arial" Height="30"/>
+                <ComboBox MinWidth="200" x:Name="cbxSpecies"  FontSize="16"  FontFamily="Arial" Height="30"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button  x:Name="btnDelete" Click="btnDelete_Click" Content="Delete" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>

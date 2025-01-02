@@ -34,14 +34,14 @@
                 <Label Margin="0 0 20 0" Style="{StaticResource LabelStyle}">
                     Watering interval:
                 </Label>
-                <xctk:TimeSpanUpDown x:Name="tmsWateringInterval" FontSize="16" FontFamily="Arial" Height="30" Minimum="1" Value="1"/>
+                <xctk:TimeSpanUpDown MinWidth="120" x:Name="tmsWateringInterval" FontSize="16" FontFamily="Arial" Height="30" Minimum="1" Value="1"/>
             </StackPanel>
 
             <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Label Margin="0 0 20 0" Style="{StaticResource LabelStyle}">
                     Required water (in liters):
                 </Label>
-                <xctk:DecimalUpDown x:Name="decRequiredWater"  FontSize="16" FormatString="F2" FontFamily="Arial" Height="30" Minimum="0.1" Increment=".05" Value="0.1"/>
+                <xctk:DecimalUpDown  MinWidth="70" x:Name="decRequiredWater"  FontSize="16" FormatString="F2" FontFamily="Arial" Height="30" Minimum="0.1" Increment=".05" Value="0.1"/>
             </StackPanel>
             <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button Grid.Row="6" x:Name="btnDelete" Click="btnDelete_Click" Content="Delete" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
