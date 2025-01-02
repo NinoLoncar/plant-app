@@ -40,5 +40,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new DiseasesUC();
 		}
+
+		private void btnGroups_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new GroupsUC();
+		}
 	}
 }
