@@ -19,7 +19,7 @@ namespace PlantApp.User_Controls
 
 		private void LoadData()
 		{
-			var sql = "SELECT id, plant, title, content, added_at AddedAt, last_edited_at LastEditedAt  FROM get_diary_entries_for_user(@Email);";
+			var sql = "SELECT id, plant, title, content, added_at AddedAt, last_edited_at LastEditedAt, image_count ImageCount  FROM get_diary_entries_for_user(@Email);";
 			var diaryEntries = db.ExecuteQuery<DiaryEntry>(sql, new { Email = Authenticator.LoggedInUser.Email }).ToList();
 			dtgDiaryEntries.ItemsSource = diaryEntries;
 		}
@@ -118,6 +118,7 @@ namespace PlantApp.User_Controls
 						lblMessage.Content = "Something went wrong";
 						lblMessage.Visibility = Visibility.Visible;
 					}
+					LoadData();
 				}
 				catch (Exception ex)
 				{

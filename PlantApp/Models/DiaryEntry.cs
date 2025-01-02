@@ -13,5 +13,7 @@
 		public DateTime AddedAt { get; set; }
 
 		public DateTime LastEditedAt { get; set; }
+
+		public int ImageCount { get; set; }
 	}
 }
