@@ -1,4 +1,5 @@
-﻿using PlantApp.Models;
+﻿using Npgsql;
+using PlantApp.Models;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -120,6 +121,20 @@ namespace PlantApp.User_Controls
 					}
 					LoadData();
 				}
+				catch (PostgresException ex)
+				{
+					switch (ex.SqlState)
+					{
+						case "42501":
+							lblMessage.Content = "Permission denied (try desktop)";
+							lblMessage.Visibility = System.Windows.Visibility.Visible;
+							break;
+						default:
+							lblMessage.Content = "Something went wrong";
+							lblMessage.Visibility = System.Windows.Visibility.Visible;
+							break;
+					}
+				}
 				catch (Exception ex)
 				{
 					{
@@ -161,6 +176,20 @@ namespace PlantApp.User_Controls
 					db.ExecuteNonQuery(sql, new { DiaryEntry = selectedDiaryEntry.Id, FolderPath = folderPath });
 					Process.Start("explorer.exe", folderPath);
 
+				}
+				catch (PostgresException ex)
+				{
+					switch (ex.SqlState)
+					{
+						case "42501":
+							lblMessage.Content = "Permission denied (try desktop)";
+							lblMessage.Visibility = System.Windows.Visibility.Visible;
+							break;
+						default:
+							lblMessage.Content = "Something went wrong";
+							lblMessage.Visibility = System.Windows.Visibility.Visible;
+							break;
+					}
 				}
 				catch (Exception ex)
 				{
