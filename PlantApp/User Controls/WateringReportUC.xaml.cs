@@ -26,9 +26,9 @@ namespace PlantApp.User_Controls
 		private void LoadPlantData()
 		{
 			var sql = "SELECT id, species, name, date_added DateAdded FROM plants WHERE owner = @Owner;";
-			var plantSpecies = db.ExecuteQuery<Plant>(sql, new { Owner = Authenticator.LoggedInUser.Email }).ToList();
-			cbxPlants.ItemsSource = plantSpecies;
-			if (plantSpecies.Count > 0)
+			var plants = db.ExecuteQuery<Plant>(sql, new { Owner = Authenticator.LoggedInUser.Email }).ToList();
+			cbxPlants.ItemsSource = plants;
+			if (plants.Count > 0)
 			{
 				cbxPlants.SelectedIndex = 0;
 			}
