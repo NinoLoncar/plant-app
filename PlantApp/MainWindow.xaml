@@ -24,6 +24,9 @@
             <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnDiaryEntries" Click="btnDiaryEntries_Click">
                 <TextBlock Text="Diary entries" HorizontalAlignment="Center" />
             </Button>
+            <Button Style="{StaticResource ToolBarButton}" Margin="20 2 5 2" x:Name="btnDiseases" Click="btnDiseases_Click">
+                <TextBlock Text="Diseases" HorizontalAlignment="Center" />
+            </Button>
         </StackPanel>
         <ContentControl x:Name="contentControl"/>
     </DockPanel>

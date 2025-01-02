@@ -3,9 +3,6 @@ using System.Windows;
 
 namespace PlantApp
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
 		public MainWindow()
@@ -37,6 +34,11 @@ namespace PlantApp
 		private void btnDiaryEntries_Click(object sender, RoutedEventArgs e)
 		{
 			contentControl.Content = new DiaryEntriesUC();
+		}
+
+		private void btnDiseases_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new DiseasesUC();
 		}
 	}
 }
