@@ -181,5 +181,21 @@ namespace PlantApp.User_Controls
 
 			return null;
 		}
+
+		private void btnUpdate_Click(object sender, RoutedEventArgs e)
+		{
+			var selectedDiaryEntry = dtgDiaryEntries.SelectedItem as DiaryEntry;
+			if (selectedDiaryEntry == null)
+			{
+				lblMessage.Content = "Select diary entry";
+				lblMessage.Visibility = Visibility.Visible;
+				return;
+			}
+			var parentWindow = Window.GetWindow(this) as MainWindow;
+			if (parentWindow != null)
+			{
+				parentWindow.contentControl.Content = new UpdateDiaryEntryUC(selectedDiaryEntry);
+			}
+		}
 	}
 }
