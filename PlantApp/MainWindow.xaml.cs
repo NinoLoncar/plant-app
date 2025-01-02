@@ -50,5 +50,10 @@ namespace PlantApp
 		{
 			contentControl.Content = new PlantGroupMembersUC();
 		}
+
+		private void btnDiseaseCases_Click(object sender, RoutedEventArgs e)
+		{
+			contentControl.Content = new PlantDieseaseCasesUC();
+		}
 	}
 }
