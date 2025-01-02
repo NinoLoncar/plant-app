@@ -1,6 +1,6 @@
 ﻿namespace PlantApp.Models
 {
-	internal class PlantDiesease
+	internal class PlantDisease
 	{
 		public int Id { get; set; }
 

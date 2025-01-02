@@ -17,13 +17,13 @@ namespace PlantApp.User_Controls
 		private void LoadData()
 		{
 			var sql = "SELECT * FROM plant_diseases;";
-			var diseases = db.ExecuteQuery<PlantDiesease>(sql).ToList();
+			var diseases = db.ExecuteQuery<PlantDisease>(sql).ToList();
 			dtgDiseases.ItemsSource = diseases;
 		}
 
 		private void btnDelete_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-			var selectedDisease = dtgDiseases.SelectedItem as PlantDiesease;
+			var selectedDisease = dtgDiseases.SelectedItem as PlantDisease;
 			if (selectedDisease != null)
 			{
 				try
