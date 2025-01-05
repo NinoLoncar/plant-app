@@ -66,7 +66,7 @@ namespace PlantApp
 			switch (ex.SqlState)
 			{
 				case "23505":
-					lblLogin.Content = "Email already registered";
+					lblLogin.Content = "Email or username already registered";
 					break;
 				case "P0001":
 					lblLogin.Content = "Wrong email format";
