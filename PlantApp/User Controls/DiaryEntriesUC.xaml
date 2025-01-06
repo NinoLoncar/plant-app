@@ -47,7 +47,7 @@
             <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button  x:Name="btnDelete" Click="btnDelete_Click" Content="Delete" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
                 <Button  x:Name="btnAdd" Click="btnAdd_Click" Content="Add" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
-                <Button  x:Name="btnUpdate" Click="btnUpdate_Click" Content="Update" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
+                <Button  x:Name="btnUpdate" Click="btnUpdate_Click" Content="Edit" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
             <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button x:Name="btnAddImage" Click="btnAddImage_Click" Content="Add image" Width="100" Height="30" Style="{StaticResource ButtonStyle}"/>
